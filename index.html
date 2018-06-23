@@ -1,0 +1,302 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<link  id="hostStyle" rel="stylesheet" href="css/styles.css"/>
+
+<title>PathManager</title>
+    <style>
+        body{   
+        color:white;
+        font-size: 10px;   
+        background-color: #333333;    
+        }
+        
+        #content{
+        width: 500px;   
+        margin: auto;    
+        }
+        
+        ul{
+        padding: 0px;    
+        }
+        
+        li {
+        list-style: none;    
+        }
+        
+        h1{
+        font-size: 20px;    
+        }
+        
+        h2{
+        width: 280px;    
+        margin-top: 20px;    
+        font-size: 15px;   
+        border-top: solid 1px #ffffff;    
+        }
+        
+        #selection_path{
+            margin-top: 40px;
+            border-top: solid 2px #fab10e;
+        }
+        
+        #color ,#load_type ,#save_type{
+        display: flex;
+        }
+        
+        /*=============radio===================*/
+        input[type="radio"],input[type="checkbox"]{
+        display: none;   
+        }
+        
+        .RGB{
+        width: 50px;
+        display: inline-block;
+        text-align: center;
+        border:solid 1px #ffffff;
+        border-radius: 10px;
+        margin-left: 10px;
+        background-color: black;
+        }
+        
+        /*=======================================*/
+        
+        
+        /*============check box====================*/
+        
+       
+        
+        .ON{
+        width: 50px;
+        display: inline-block;
+        border: solid 3px #ffffff;
+        border-radius: 5px;    
+        text-align: center;
+        background-color: black;
+        color: #523c20;    
+        }
+        
+        
+        .file_condition{
+        display: inline-block;
+        border:solid 1px #ffffff;
+        width: 250px;
+        text-align: center;
+        margin-bottom: 5px; 
+        background-color: rgba(0,0,0,0);    
+        border-radius: 5px;    
+        }
+        
+        #condition{
+        margin-bottom: 0px;    
+        }
+        
+        p{
+        margin-top: 0px;    
+        }
+        
+        #change_workpath{
+        display: inline-block;
+        border:solid 1px #ffffff;    
+        padding: 3px 0px;
+        width: 150px;
+        text-align: center;
+        margin: 10px 0px;  
+        border-radius: 5px;   
+        background-color: rgba(0,0,0,0);     
+        }
+        
+        
+        #wpname span{
+        margin-right: 30px;    
+        }
+        
+        /*==========RGB==========================*/
+        input[type="checkbox"]:checked + .ON{
+        background-color: #eb8309;    
+        color: white;
+        }
+        
+        input[type="radio"]:checked + #buttonR{
+        background-color: red;
+        }
+        
+        input[type="radio"]:checked + #buttonG{
+        background-color: #2ed127;
+        }
+        
+        input[type="radio"]:checked + #buttonB{
+        background-color: blue;
+        }
+        /*==========RGB==========================*/
+        
+        .ext{
+        background-color: black;
+        display: inline-block;
+        width: 50px;
+        text-align: center;
+        margin-right: 20px;
+        background-color: rgba(0,0,0,0);
+        border: solid 1px #ffffff;
+        padding: 3px ,0px;
+        border-radius: 3px; s 
+        }
+        
+        
+        
+        /*======================================================*/
+        
+        input[type="button"]{
+        border-radius: 5px;
+        background: linear-gradient(rgb(154, 152, 152),rgb(20,20,20));
+        color: white;
+        padding: 5px 15px;    
+        border: none;    
+        }
+        
+        .box_of_ext input[type="checkbox"]:checked + .ext{
+        background-color: rgba(255,255,255,0.3);
+        color: white;
+        }
+        
+        .fd_label input[type="checkbox"]:checked + .file_condition{
+        background-color: rgba(255,255,255,0.4);    
+        }
+        
+        #change_workpath{
+        color: black;
+        }
+        
+        #workpath_ch:checked + #change_workpath{
+        background-color: rgba(255,255,255,0.4);
+        color: white;
+        }
+        
+        /*=============================================================*/
+        input[type="number"],input[type="text"]{
+        background-color: #292828;
+        color: #6f6c6c;
+        border-radius: 5px;    
+        }
+        
+        
+        
+        
+        /*==================hover====================*/
+        
+        input[type="button"]:hover,.file_condition:hover,.ext:hover,#change_workpath:hover{
+        cursor: pointer;
+        }
+        
+        /*=====================selected=====================*/
+        select{
+            background: black;
+            color: white;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            margin-top: 5px;
+        }
+        
+        
+        
+        
+    </style>
+    
+</head>
+
+<body class="hostElt">
+    <div id="content">        
+    <h1>PathManager ver2</h1>   
+    
+    <h2>Path check</h2>    
+    <form name="storke_color">
+        <ul id="color">    
+            <li><label><input type="checkbox" id="path_check" checked="checked"><span class="ON">ON</span></label></li>
+            <li><label><input type="radio" id="R" name="RGB_select" checked="checked" value="R"> <span class="RGB" id="buttonR">R</span></label></li>
+            <li><label><input type="radio" id="G" name="RGB_select" value="G">                   <span class="RGB" id="buttonG">G</span></label></li>
+            <li><label><input type="radio" id="B" name="RGB_select" value="B">                   <span class="RGB" id="buttonB">B</span></label></li>
+        </ul>  
+    </form>        
+    
+    <h2>Convert to Clipping Path</h2>    
+    <form name="path">
+        <ul id="kind_of_path">
+            <li><label><input type="checkbox" id="ClippingPath"><span class="ON">ON</span></label></li>
+            <li><label id="wc"><input type="checkbox" id="workpath_ch" disabled="true"><span id="change_workpath" >include work path</span></label></li> 
+            <li><label id="wpname"><span>work path rename</span><input type="text" value="path01" id="workpath_rename" disabled="true"></label></li>
+        </ul>    
+    </form>   
+    
+    <h2>Stop process</h2>    
+    <form name="caution">
+    <p>if file is....</p>
+        <ul id="condition">
+            <li><label class="fd_label"><input type="checkbox" id="path_num"><span class="file_condition">Paths more than one</span></label> </li>
+            <li><label class="fd_label"><input type="checkbox" id="work_path"><span class="file_condition">including work path</span></label> </li>
+            <li><label class="fd_label"><input type="checkbox" id="noting_path"><span class="file_condition">nothing any path</span></label> </li>
+        </ul> 
+        <p>it will keep open the file and stop process</p>
+    </form>
+        
+    <h2>rename</h2>
+    <form name="rename">
+        <table id="renamelist">
+            <tr><th><label><input type="checkbox" id="isrename"><span class="ON">ON</span></label></th><th></th></tr>  
+            <tr><label><th>path01</th><th><input type="text" value="path01" class="rename_path" disabled="true"></th></label></tr>
+            <tr><label><th>path02</th><th><input type="text" value="path02" class="rename_path" disabled="true"></th></label></tr>
+            <tr><label><th>path03</th><th><input type="text" value="path03" class="rename_path" disabled="true"></th></label></tr>
+            <tr><label><th>path04</th><th><input type="text" value="path04" class="rename_path" disabled="true"></th></label></tr>
+            <tr><label><th>path05</th><th><input type="text" value="path05" class="rename_path" disabled="true"></th></label></tr>
+        </table>    
+    </form> 
+    <h2>load files(only for select folder)</h2>    
+    <form name="load_file">
+        <ul id="load_type">
+            <li><label class="box_of_ext"><input type="checkbox" id="load_psd"><span class="ext">psd</span></label></li>
+            <li><label class="box_of_ext"><input type="checkbox" id="load_jpg"><span class="ext">jpg</span></label></li>   
+            <li><label class="box_of_ext"><input type="checkbox" id="load_tiff"><span class="ext">tiff</span></label></li>   
+        </ul>    
+    </form>  
+    
+    <h2>save files</h2>
+    <form name="save">
+        <ul id="save_type">
+            <li><label class="box_of_ext"><input type="checkbox" id="save_eps"><span class="ext">eps</span></label></li>
+            <li><label class="box_of_ext"><input type="checkbox" id="save_psd"><span class="ext">psd</span></label></li>
+            <li><label class="box_of_ext"><input type="checkbox" id="save_jpg"><span class="ext">jpg</span></label></li>
+            <li><label class="box_of_ext"><input type="checkbox" id="save_tiff"><span class="ext">tiff</span></label></li>    
+        </ul>
+    </form>
+    <input type="button" value="for opened files" id="opened_file">
+    <input type="button" value="select folder" id="select_folder"> 
+        
+   
+    <h2 id="selection_path">make selection</h2>    
+    <form id="selection" name="selection">
+        <ul>
+            <li><label class="fd_label"><input type="checkbox" id="all_of_path" name="all_of_path"><span class="file_condition">make selection from all paths</span></label></li>
+            <li><label class="fd_label"><input type="checkbox" id="action_on" name="action_on"><span class="file_condition">use action after make selection</span></label></li>
+        </ul>    
+    </form> 
+     
+    <input type="button" value="load actions" id="load_action">    
+    <form id="action" name="action">
+        <select name="set_list" id="set_list"></select>
+        <select name="child_list" id="child_list"></select>
+    </form>    
+        <input type="button" value="make selection" id="make_selection">
+    </div>
+    
+    <!-- These are debugging shortcuts.  Class debuglink items only appear in debug mode  -->
+    
+    <script src="js/libs/CSInterface.js"></script>
+    <script src="js/libs/jquery-2.0.2.min.js"></script>
+
+    <!--<script src="js/themeManager.js"></script>-->
+    <script src="js/main.js"></script>
+
+        
+</body>
+</html>
