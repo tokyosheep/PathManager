@@ -18,6 +18,40 @@
 }
 
 
+/*==================bar deisgn======================*/
+#filelist::-webkit-scrollbar{
+                height: 3px;
+                width: 3px;
+                background-color: rgba(10, 32, 150, 0.19);    
+            }
+            
+            #filelist::-webkit-scrollbar-track{
+                border-radius: 10px;    
+            }
+            
+            #filelist::-webkit-scrollbar-thumb{
+                border-radius: 10px; 
+                background-color: #121fbf;    
+            }
+            
+            #filelist::-webkit-scrollbar-corner{
+                display: none;    
+            }
+
+            ::-webkit-scrollbar{
+                height: 5px;
+                width: 5px;
+                background-color: #0c0c1c;    
+            }
+            
+            ::-webkit-scrollbar-track{
+                border-radius: 10px;    
+            }
+            
+            ::-webkit-scrollbar-thumb{
+                border-radius: 5px;
+                background-color:  #8e8ca5;   
+            }
 
 
 /*

@@ -44,7 +44,7 @@
     log += make_log();
              
         }
-     write_log(Folder.desktop+"\\log.txt",log);
+     write_log(Folder.desktop+"/log.txt",log);
     }//end of batchprocess
         
     
@@ -68,7 +68,7 @@
             log += make_log();
       
          }
-     write_log(Folder.desktop+"\\log.txt",log);
+     write_log(Folder.desktop+"/log.txt",log);
         // サブフォルダも含めたファイル一覧を取得する関数
         function getAllFile(folderObj, ext){
             if (!folderObj) return false; // キャンセルされたら処理しない
@@ -212,7 +212,7 @@
                         }
                 }
                      }  
-             var foldername = Folder.desktop+"\\pathcheck";
+             var foldername = Folder.desktop+"/pathcheck";
              makefolder(foldername);
              save2(foldername);  
              

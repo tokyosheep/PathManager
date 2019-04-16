@@ -2,15 +2,15 @@
 <ExtensionManifest Version="7.0" ExtensionBundleId="PathManager" ExtensionBundleVersion="1.0.0"
 		ExtensionBundleName="PathManager" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<ExtensionList>
-		<Extension Id="PathManager" Version="1.0" />
+		<Extension Id="PathManager" Version="2.2" />
 	</ExtensionList>
 	<ExecutionEnvironment>
 		<HostList>
             <!-- Uncomment tags according to the apps you want your panel to support -->
             
             <!-- Photoshop -->
-            <Host Name="PHXS" Version="[15.0,19.9]" />
-            <Host Name="PHSP" Version="[15.0,19.9]" />
+            <Host Name="PHXS" Version="[15.0,20.9]" />
+            <Host Name="PHSP" Version="[15.0,20.9]" />
             
             <!-- Illustrator -->
             <!-- <Host Name="ILST" Version="[18.0,20.9]" /> -->
@@ -65,14 +65,14 @@
 							<Height>700</Height>
 							<Width>400</Width>
 						</Size>
-                    <!--<MinSize>
+                    <MinSize>
                             <Height>550</Height>
                             <Width>400</Width>
                         </MinSize>
                         <MaxSize>
-                            <Height>550</Height>
-                            <Width>400</Width>
-                        </MaxSize>-->
+                            <Height>1050</Height>
+                            <Width>500</Width>
+                        </MaxSize>
                         
 					</Geometry>
 					<Icons>
